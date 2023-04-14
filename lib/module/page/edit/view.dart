@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../color/color.dart';
+
 class EditPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -30,7 +32,7 @@ class EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("小本本")),
+        title: const Center(child: Text("曹老师病历本")),
       ),
       body: Center(
         child: Column(
@@ -46,7 +48,7 @@ class EditPageState extends State<EditPage> {
             ),
             MaterialButton(
               textColor: Colors.white,
-              color: Colors.blue,
+              color: MyColor.primary,
               onPressed: () {
                 if (_controller.text.isNotEmpty) {
                   setState(() {
@@ -63,16 +65,18 @@ class EditPageState extends State<EditPage> {
             ),
             _sentence.isEmpty
                 ? const Text("空空如也")
-                : Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _sentence.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return _sentenceWidget(index);
-                      },
+                : Expanded(
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: _sentence.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return _sentenceWidget(index);
+                        },
+                      ),
                     ),
-                  ),
+                ),
           ],
         ),
       ),
@@ -93,7 +97,7 @@ class EditPageState extends State<EditPage> {
                 _updateSentence();
               });
             },
-            color: Colors.blue,
+            color: MyColor.primary,
             textColor: Colors.white,
             child: const Text("删除"),
           ),

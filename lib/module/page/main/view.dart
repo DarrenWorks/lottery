@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottery/module/color/color.dart';
 import 'package:lottery/module/page/edit/view.dart';
 import 'package:lottery/module/page/lottery/LotteryPage.dart';
 
@@ -12,7 +13,7 @@ class MainPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('曹老师抽奖系统')),
+        title: const Center(child: Text('曹老师有很多问题')),
       ),
       body: Center(
           child: Column(
@@ -25,7 +26,7 @@ class MainPage extends StatelessWidget {
             },
             //主题色
             textColor: Colors.white,
-            color: Colors.blue,
+            color: MyColor.primary,
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 100),
               child: Text('抽奖'),
@@ -39,7 +40,7 @@ class MainPage extends StatelessWidget {
               Get.to(() => EditPage());
             },
             textColor: Colors.white,
-            color: Colors.blue,
+            color: MyColor.primary,
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 100),
               child: Text('编辑'),

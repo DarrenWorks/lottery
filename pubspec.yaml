@@ -32,6 +32,9 @@ dependencies:
     sdk: flutter
   get: ^4.6.5
   shared_preferences: ^2.0.18
+  luckywheel:
+    path: ./wheel
+  google_fonts: ^4.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -89,3 +92,18 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/
+    - assets/images/
+
+  fonts:
+    - family: NotoSansSc
+      fonts:
+        - asset: assets/fonts/NotoSansSC-Thin.otf
+        - asset: assets/fonts/NotoSansSC-Regular.otf
+        - asset: assets/fonts/NotoSansSC-Medium.otf
+        - asset: assets/fonts/NotoSansSC-Light.otf
+        - asset: assets/fonts/NotoSansSC-Bold.otf
+        - asset: assets/fonts/NotoSansSC-Black.otf
+
+
